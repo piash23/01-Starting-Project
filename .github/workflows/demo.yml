@@ -6,6 +6,8 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    outputs:
+      test-data: ${{ steps.testt.outputs.test }}
     steps:
       - name: Get code
         uses: actions/checkout@v3
@@ -16,6 +18,9 @@ jobs:
         with:
           name: dist
           path: dist
+      - name: write outputs
+        id:testt
+        run: echo "data=tesing 123" >> "$GITHUB_OUTPUT"
 
   
   upload-artifact:
@@ -35,4 +40,7 @@ jobs:
           # path: dist
       - name: list files
         run: ls 
+
+      - name: output value utilization
+        run: echo "the message is: ${{ needs.test.outputs.test-data }}"
         
