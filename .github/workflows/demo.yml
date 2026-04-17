@@ -7,7 +7,7 @@ jobs:
   test:
     runs-on: ubuntu-latest
     outputs:
-      test_data: ${{ steps.testt.outputs.test }}
+      test_data: ${{ steps.testt.outputs.data }}
     steps:
       - name: Get code
         uses: actions/checkout@v3
