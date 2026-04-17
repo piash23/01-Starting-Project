@@ -7,7 +7,7 @@ jobs:
   test:
     runs-on: ubuntu-latest
     outputs:
-      test-data: ${{ steps.testt.outputs.test }}
+      test_data: ${{ steps.testt.outputs.test }}
     steps:
       - name: Get code
         uses: actions/checkout@v3
@@ -42,5 +42,5 @@ jobs:
         run: ls 
 
       - name: output value utilization
-        run: echo "the message is: ${{ needs.test.outputs.test-data }}"
+        run: echo "the message is: ${{ needs.test.outputs.test_data }}"
         
