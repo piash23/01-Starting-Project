@@ -42,5 +42,5 @@ jobs:
         run: ls 
 
       - name: output value utilization
-        run: echo "the message is: ${{ needs.test.outputs.test_data }}"
-        
+        run: |
+          echo "the message is: ${{ needs.test.outputs.test_data }}"
