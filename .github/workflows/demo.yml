@@ -19,7 +19,7 @@ jobs:
           name: dist
           path: dist
       - name: write outputs
-        id:testt
+        id: testt
         run: echo "data=tesing 123" >> "$GITHUB_OUTPUT"
 
   
